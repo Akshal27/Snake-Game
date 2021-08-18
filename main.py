@@ -36,12 +36,16 @@ while game_is_on:
 
 	# detect collision
 	if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-		game_is_on = False
-		score.game_over()
+		score.reset()
+		snake.reset()
+		# game_is_on = False
+		# score.game_over()
 
 	for segment in snake.my_snake_shape[1:]:
 		if snake.head.distance(segment) < 10:
-				game_is_on = False
-				score.game_over()
+			score.reset()
+			snake.reset()
+				# game_is_on = False
+				# score.game_over()
 
 my_screen.exitonclick()
